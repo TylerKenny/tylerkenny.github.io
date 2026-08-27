@@ -59,10 +59,21 @@
     }
   });
 
+  function kbd(key) {
+    return "<kbd>" + key + "</kbd>";
+  }
+
+  var hint = document.createElement("p");
+  hint.className = "kbd-hint";
   if (index.length) {
-    var hint = document.createElement("p");
-    hint.className = "kbd-hint";
-    hint.innerHTML = "<kbd>j</kbd>/<kbd>k</kbd> select &middot; <kbd>l</kbd> open &middot; <kbd>h</kbd> back";
+    hint.innerHTML =
+      kbd("j") + "/" + kbd("\u2193") + " down &middot; " +
+      kbd("k") + "/" + kbd("\u2191") + " up &middot; " +
+      kbd("l") + "/" + kbd("\u2192") + " open";
+  } else if (document.querySelector(".back-link")) {
+    hint.innerHTML = kbd("h") + "/" + kbd("\u2190") + " back";
+  }
+  if (hint.innerHTML) {
     var footer = document.querySelector(".site-footer");
     if (footer) footer.parentNode.insertBefore(hint, footer);
   }
