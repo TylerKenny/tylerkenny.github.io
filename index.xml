@@ -5,7 +5,14 @@
     <link>https://tylerkenny.github.io/</link>
     <description>Notes on software, tools, and whatever else I&#x27;m picking at.</description>
     <generator>build.py</generator>
-    <lastBuildDate>Thu, 27 Aug 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 28 Aug 2026 00:00:00 GMT</lastBuildDate>
+    <item>
+      <title>Follow up testing</title>
+      <link>https://tylerkenny.github.io/posts/follow-up-testing/</link>
+      <guid isPermaLink="true">https://tylerkenny.github.io/posts/follow-up-testing/</guid>
+      <pubDate>Fri, 28 Aug 2026 00:00:00 GMT</pubDate>
+      <description>Follow up testing.</description>
+    </item>
     <item>
       <title>Hello, world</title>
       <link>https://tylerkenny.github.io/posts/hello-world/</link>
