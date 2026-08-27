@@ -7,18 +7,11 @@
     <generator>build.py</generator>
     <lastBuildDate>Thu, 27 Aug 2026 00:00:00 GMT</lastBuildDate>
     <item>
-      <title>Hello, Everforest</title>
-      <link>https://tylerkenny.github.io/posts/hello-everforest/</link>
-      <guid isPermaLink="true">https://tylerkenny.github.io/posts/hello-everforest/</guid>
+      <title>Hello, world</title>
+      <link>https://tylerkenny.github.io/posts/hello-world/</link>
+      <guid isPermaLink="true">https://tylerkenny.github.io/posts/hello-world/</guid>
       <pubDate>Thu, 27 Aug 2026 00:00:00 GMT</pubDate>
-      <description>A new test post. The site is now plain HTML plus a 250-line Python script, themed Everforest Dark Hard.</description>
-    </item>
-    <item>
-      <title>This is a test file</title>
-      <link>https://tylerkenny.github.io/posts/this-is-a-test-file/</link>
-      <guid isPermaLink="true">https://tylerkenny.github.io/posts/this-is-a-test-file/</guid>
-      <pubDate>Fri, 29 Nov 2024 00:00:00 GMT</pubDate>
-      <description>This is a test file This is a bullet point this is another point oh boy this is another</description>
+      <description>First post. Notes on software, tools, and whatever else I&#x27;m picking at.</description>
     </item>
   </channel>
 </rss>
