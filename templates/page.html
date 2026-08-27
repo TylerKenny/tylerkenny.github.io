@@ -15,14 +15,19 @@
 </head>
 <body>
 <div class="wrap">
+  <div class="layout">
+{{sidenav}}
+    <main>
 {{content}}
-  <footer class="site-footer">
-    <span>© {{year}} {{author}}</span>
-    <nav>
-      <a href="/">writing</a>
-      <a href="/index.xml">rss</a>
-    </nav>
-  </footer>
+      <footer class="site-footer">
+        <span>© {{year}} {{author}}</span>
+        <nav>
+          <a href="/">writing</a>
+          <a href="/index.xml">rss</a>
+        </nav>
+      </footer>
+    </main>
+  </div>
 </div>
 </body>
 </html>

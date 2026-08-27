@@ -184,7 +184,38 @@ def iso(moment):
 
 # ---------------------------------------------------------------- pages
 
-def page_shell(config, template, *, title, description, body):
+MONTHS = [
+    "January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December",
+]
+
+
+def sidenav_html(posts, current_slug=None):
+    """Month-grouped archive rail. Day numbers in a left gutter separate the
+    entries — wrapped titles hang under the text, not under the number."""
+    if not posts:
+        return ""
+    groups = {}
+    for post in posts:  # posts arrive newest first; keep that order within months
+        groups.setdefault((post["date"].year, post["date"].month), []).append(post)
+    out = '    <aside class="sidenav">\n      <a class="sidenav-home" href="/">all writing</a>\n'
+    for (year, month) in sorted(groups, reverse=True):
+        out += (
+            f'      <div class="sidenav-group">\n'
+            f'        <h3 class="sidenav-month">{MONTHS[month - 1]} {year}</h3>\n'
+        )
+        for post in groups[(year, month)]:
+            current = " current" if post["slug"] == current_slug else ""
+            out += (
+                f'        <a class="sidenav-item{current}" href="/posts/{post["slug"]}/">'
+                f'<span class="sidenav-day">{post["date"].day:02d}</span>'
+                f'<span>{html.escape(post["title"])}</span></a>\n'
+            )
+        out += "      </div>\n"
+    return out.rstrip("\n") + "\n    </aside>"
+
+
+def page_shell(config, template, *, title, description, body, sidenav=""):
     site = config["title"]
     full_title = site if title in ("", site) else (f"{title} · {site}" if site else title)
     return render(
@@ -193,6 +224,7 @@ def page_shell(config, template, *, title, description, body):
             "title": html.escape(full_title),
             "description": html.escape(description or config["description"]),
             "content": body,
+            "sidenav": sidenav,
             "author": html.escape(config["author"]),
             "year": str(config["year"] or date.today().year),
         },
@@ -293,6 +325,7 @@ def main():
         title=config["title"],
         description=config["description"],
         body=index_body(posts, config),
+        sidenav=sidenav_html(posts),
     )
     write("index.html", index)
 
@@ -305,6 +338,7 @@ def main():
                 title=post["title"],
                 description=excerpt(post),
                 body=post_body(post),
+                sidenav=sidenav_html(posts, post["slug"]),
             ),
         )
 
@@ -316,6 +350,7 @@ def main():
             title="404",
             description="Page not found",
             body=not_found_body(),
+            sidenav=sidenav_html(posts),
         ),
     )
     write("index.xml", rss(posts, config))

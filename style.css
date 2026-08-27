@@ -33,7 +33,7 @@ body {
 }
 
 .wrap {
-  max-width: 42rem;
+  max-width: 62rem;
   margin: 0 auto;
   padding: 4rem 1.25rem 3rem;
   min-height: 100vh;
@@ -143,6 +143,59 @@ th { color: var(--fg-dim); font-weight: 500; }
 
 .empty { color: var(--fg-dim); }
 
+/* ---- sidenav ---- */
+
+.layout { flex: 1 0 auto; display: flex; gap: 3.5rem; width: 100%; }
+.layout main { flex: 1; min-width: 0; max-width: 42rem; display: flex; flex-direction: column; }
+
+.sidenav {
+  width: 15rem;
+  flex-shrink: 0;
+  position: sticky;
+  top: 4rem;
+  align-self: flex-start;
+}
+.sidenav-home {
+  display: block;
+  margin-bottom: 1.5rem;
+  color: var(--fg-dim);
+  font-size: 0.8rem;
+  text-decoration: none;
+}
+.sidenav-home:hover { color: var(--green); }
+.sidenav-group { margin-bottom: 1.75rem; }
+.sidenav-month {
+  margin: 0 0 0.5rem;
+  color: var(--fg-dim);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+.sidenav-item {
+  display: flex;
+  gap: 0.65rem;
+  margin-bottom: 0.6rem;
+  padding: 0.1rem 0;
+  color: var(--fg);
+  font-size: 0.85rem;
+  line-height: 1.4;
+  text-decoration: none;
+}
+.sidenav-day {
+  flex-shrink: 0;
+  width: 1.4rem;
+  padding-top: 0.2rem;
+  color: var(--fg-dim);
+  font-size: 0.7rem;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+.sidenav-item:hover,
+.sidenav-item.current { color: var(--green); }
+.sidenav-item:hover .sidenav-day,
+.sidenav-item.current .sidenav-day { color: var(--green); }
+
 /* ---- keyboard nav ---- */
 
 article.selected { background: var(--bg1); }
@@ -155,6 +208,11 @@ article.selected .post-title a { color: var(--green); }
   padding: 0.05rem 0.35rem;
   font-family: inherit;
   font-size: 0.75rem;
+}
+
+@media (max-width: 60rem) {
+  .sidenav { display: none; }
+  .wrap { max-width: 42rem; }
 }
 
 @media (max-width: 34rem) {
