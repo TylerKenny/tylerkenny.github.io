@@ -28,6 +28,7 @@ TIMEZONE = timezone(timedelta(hours=0))
 # anything not regenerated is stale. Kept assets are re-written every build.
 PRUNE_DIRS = ["css", "fonts", "categories", "tags", "page", "posts/page"]
 PRUNE_FILES = [
+    "app.js",
     "bundle.min.js",
     "terminal.css",
     "og-image.png",
@@ -278,6 +279,7 @@ def main():
     prune_stale_posts(posts)
 
     write("style.css", read_template("style.css"))
+    write("app.js", read_template("app.js"))
     for asset in ("favicon.svg", "favicon.png", "apple-touch-icon.png"):
         source = os.path.join(ROOT, asset)
         if os.path.exists(source):

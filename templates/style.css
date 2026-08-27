@@ -70,6 +70,15 @@ article:first-of-type { padding-top: 0; }
 
 /* ---- post ---- */
 
+.back-link {
+  display: inline-block;
+  margin-bottom: 2rem;
+  color: var(--fg-dim);
+  font-size: 0.85rem;
+  text-decoration: none;
+}
+.back-link:hover { color: var(--green); }
+
 .post-header { margin-bottom: 2.5rem; }
 .post-header .post-title { font-size: 1.5rem; }
 .post-header .post-date { margin-top: 0.4rem; }
@@ -133,6 +142,20 @@ th { color: var(--fg-dim); font-weight: 500; }
 .site-footer a:hover { color: var(--green); }
 
 .empty { color: var(--fg-dim); }
+
+/* ---- keyboard nav ---- */
+
+article.selected { background: var(--bg1); }
+article.selected .post-title a { color: var(--green); }
+
+.kbd-hint { margin: 2rem 0 0; color: var(--fg-dim); font-size: 0.8rem; }
+.kbd-hint kbd {
+  background: var(--bg1);
+  border-radius: 3px;
+  padding: 0.05rem 0.35rem;
+  font-family: inherit;
+  font-size: 0.75rem;
+}
 
 @media (max-width: 34rem) {
   .wrap { padding-top: 2.5rem; }
