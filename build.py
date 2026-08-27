@@ -156,6 +156,23 @@ def prune():
             print(f"  pruned {name}")
 
 
+def prune_stale_posts(posts):
+    """Delete generated post dirs whose source file is gone. Without this a
+deprecated post keeps serving at its old URL — out of the listing, the feed and
+the sitemap, but still readable and still indexed."""
+    if not os.path.isdir(POSTS_SRC):
+        return  # nothing to compare against; don't wipe posts on a config slip
+    live = {post["slug"] for post in posts}
+    out = os.path.join(ROOT, "posts")
+    if not os.path.isdir(out):
+        return
+    for name in sorted(os.listdir(out)):
+        target = os.path.join(out, name)
+        if os.path.isdir(target) and name not in live:
+            shutil.rmtree(target)
+            print(f"  pruned posts/{name}/ (no source post)")
+
+
 def rfcdate(moment):
     return formatdate(moment.timestamp(), usegmt=True)
 
@@ -257,6 +274,7 @@ def main():
     posts = load_posts()
 
     prune()
+    prune_stale_posts(posts)
 
     write("style.css", read_template("style.css"))
     for asset in ("favicon.png", "apple-touch-icon.png"):

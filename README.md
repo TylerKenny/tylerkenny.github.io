@@ -36,17 +36,31 @@ Preview locally: `python3 -m http.server 8000` then open <http://localhost:8000>
 | `templates/style.css` | copied to `style.css` at the root |
 | `images/` | static assets, referenced with absolute paths (`/images/foo.png`) |
 | `build.py` | the generator |
+| `.nojekyll` | empty, hand-written. Tells GitHub Pages to skip Jekyll — see below |
 
 Everything else at the repo root is **generated** — commit it (GitHub Pages serves it
 straight out of the branch), but never edit it by hand. `build.py` deletes and rewrites
-it on every run, including anything the old Hugo build left behind.
+it on every run, including anything the old Hugo build left behind. The hand-kept
+exceptions are `.nojekyll`, `site.toml`, `favicon.png` and `apple-touch-icon.png`.
 
 ## What build.py does
 
 Reads `site.toml`, sorts posts newest-first, then writes `index.html`, one
-`posts/<slug>/index.html` per post, `404.html`, `index.xml` (RSS) and `sitemap.xml`.
-That's all. Post bodies are inserted verbatim; only titles, dates and excerpts are
+`posts/<slug>/index.html` per post, `404.html`, `index.xml` (RSS) and `sitemap.xml`. It also removes any generated `posts/<slug>/`
+directory whose source file no longer exists, so a deleted post does not keep
+serving at its old URL. Post bodies are inserted verbatim; only titles, dates and excerpts are
 escaped.
+
+## GitHub Pages
+
+The site deploys from `main` / `/` ("deploy from a branch"). GitHub runs no build for
+us, so **the committed files are the deployment** — never gitignore generated output
+or the site ships without it.
+
+`.nojekyll` matters: without it GitHub runs a Jekyll build on every push. Our generated
+pages carry no front matter so they pass through, but `content/posts/*.html` does have
+front matter, meaning Jekyll processes and republishes them with Liquid live inside
+them. The first post containing `{{` or `{%` would mangle a page or fail the deploy.
 
 ## Theming
 
