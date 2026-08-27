@@ -213,7 +213,8 @@ def index_body(posts, config):
 
 
 def post_body(post):
-    return f"""  <article>
+    return f"""  <a class="back-link" href="/">&larr; all writing</a>
+  <article>
     <header class="post-header">
       <h1 class="post-title">{html.escape(post['title'])}</h1>
       <time class="post-date" datetime="{iso(post['date'])}">{iso(post['date'])}</time>
