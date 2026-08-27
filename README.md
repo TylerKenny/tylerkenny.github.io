@@ -35,6 +35,7 @@ Preview locally: `python3 -m http.server 8000` then open <http://localhost:8000>
 | `templates/page.html` | the single layout every page uses |
 | `templates/style.css` | copied to `style.css` at the root |
 | `images/` | static assets, referenced with absolute paths (`/images/foo.png`) |
+| `favicon.svg` / `favicon.png` / `apple-touch-icon.png` | site icon: vector + 32px raster + 180px iOS (square, opaque — iOS masks it itself) |
 | `build.py` | the generator |
 | `.nojekyll` | empty, hand-written. Tells GitHub Pages to skip Jekyll — see below |
 

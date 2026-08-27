@@ -277,7 +277,7 @@ def main():
     prune_stale_posts(posts)
 
     write("style.css", read_template("style.css"))
-    for asset in ("favicon.png", "apple-touch-icon.png"):
+    for asset in ("favicon.svg", "favicon.png", "apple-touch-icon.png"):
         source = os.path.join(ROOT, asset)
         if os.path.exists(source):
             print(f"  kept  {asset}")
