@@ -1,40 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Terminal</title>
-    <link>/</link>
-    <description>Recent content on Terminal</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Fri, 29 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <title>Tyler Kenny</title>
+    <link>https://tylerkenny.github.io/</link>
+    <description>Notes on software, tools, and whatever else I&#x27;m picking at.</description>
+    <generator>build.py</generator>
+    <lastBuildDate>Thu, 27 Aug 2026 00:00:00 GMT</lastBuildDate>
+    <item>
+      <title>Hello, Everforest</title>
+      <link>https://tylerkenny.github.io/posts/hello-everforest/</link>
+      <guid isPermaLink="true">https://tylerkenny.github.io/posts/hello-everforest/</guid>
+      <pubDate>Thu, 27 Aug 2026 00:00:00 GMT</pubDate>
+      <description>A new test post. The site is now plain HTML plus a 250-line Python script, themed Everforest Dark Hard.</description>
+    </item>
     <item>
       <title>This is a test file</title>
-      <link>/posts/this-is-a-test-file/</link>
-      <pubDate>Fri, 29 Nov 2024 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/this-is-a-test-file/</guid>
-      <description>&lt;h1 id=&#34;this-is-a-test-file&#34;&gt;This is a test file&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;This is a bullet point&lt;/li&gt;
-&lt;li&gt;this is another point&lt;/li&gt;
-&lt;li&gt;
-&lt;h3 id=&#34;oh-boy-this-is-another&#34;&gt;oh boy this is another&lt;/h3&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;[tyler-bas-meme.png]
-!&lt;img alt=&#34;Image Description&#34; src=&#34;/images/tyler-bas-meme.png&#34;&gt;&lt;/p&gt;</description>
-      <content>&lt;h1 id=&#34;this-is-a-test-file&#34;&gt;This is a test file&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;This is a bullet point&lt;/li&gt;
-&lt;li&gt;this is another point&lt;/li&gt;
-&lt;li&gt;
-&lt;h3 id=&#34;oh-boy-this-is-another&#34;&gt;oh boy this is another&lt;/h3&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;[tyler-bas-meme.png]
-!&lt;img alt=&#34;Image Description&#34; src=&#34;/images/tyler-bas-meme.png&#34;&gt;&lt;/p&gt;
-</content>
+      <link>https://tylerkenny.github.io/posts/this-is-a-test-file/</link>
+      <guid isPermaLink="true">https://tylerkenny.github.io/posts/this-is-a-test-file/</guid>
+      <pubDate>Fri, 29 Nov 2024 00:00:00 GMT</pubDate>
+      <description>This is a test file This is a bullet point this is another point oh boy this is another</description>
     </item>
-    
   </channel>
 </rss>

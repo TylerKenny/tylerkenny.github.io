@@ -1,0 +1,7 @@
+title       = "Tyler Kenny"
+description = "Notes on software, tools, and whatever else I'm picking at."
+author      = "Tyler Kenny"
+# Absolute origin, no trailing slash. Feeds sitemap.xml and index.xml.
+base_url    = "https://tylerkenny.github.io"
+# Leave blank to use the current year.
+year        = ""
